@@ -3,39 +3,19 @@
  * date : 2/13/2024
  * project : bigzkoop-test-front-end
  */
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const usersInitialState = {
-    user: {
-        data: null,
-        isLoading: false,
-        errors: '',
-    }
-};
-
-const usersSlice = createSlice({
-    name: "users",
-    initialState: usersInitialState,
+const mySlice = createSlice({
+    name: 'mySlice',
+    initialState: { value: false },
     reducers: {
-        getUserAction: (state) => {
-            state.user.isLoading = true;
-            state.user.errors = '';
+        actionDone: (state) => {
+            state.value = !state.value;
         },
-        getUserSuccessAction: (state, action) => {
-            state.user.isLoading = false;
-            state.user.data = action.payload;
-        },
-        getUserErrorAction: (state, action) => {
-            state.user.isLoading = false;
-            state.user.errors = action.payload;
-        },
-    }
+    },
 });
 
+export const { actionDone } = mySlice.actions;
 
-export const {
-    getUserAction,
-    getUserSuccessAction,
-    getUserErrorAction
-} = usersSlice.actions;
-export default usersSlice.reducer;
+export default mySlice.reducer;
+

@@ -1,14 +1,13 @@
 import './App.css'
-import ProfilePage from "./pages/ProfilePage";
-
+import {useDispatch} from "react-redux";
 
 function App() {
-
-  return (
-    <>
-        <ProfilePage/>
-    </>
-  )
+    const dispatch = useDispatch();
+    return (
+        <button onClick={() => dispatch({ type: 'DO_SOMETHING' })}>
+            Do something
+        </button>
+    );
 }
 
 export default App
