@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.domine-font {
+             font-family: "Domine", serif;
+             font-optical-sizing: auto;
+             font-weight: 500;
+             font-style: normal;
+         }
+.maven-pro-font {
+                font-family: "Maven Pro", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 300;
+                font-style: normal;
+            }
