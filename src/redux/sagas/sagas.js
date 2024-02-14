@@ -8,6 +8,8 @@ import axios from 'axios';
 import { setData } from '../slice/dataSlice.js';
 import {setComments} from "../slice/commentsSlice.js";
 import { setUsers } from '../slice/usersSlice.js';
+import { setAlbums } from '../slice/albumSlice.js';
+import { setPhotos } from '../slice/photosSlice.jsx';
 
 function* workerSaga() {
     console.log("Get Posts")
@@ -25,9 +27,20 @@ function* fetchUsersSaga() {
     const response = yield call(axios.get, 'https://jsonplaceholder.typicode.com/users');
     yield put(setUsers(response.data));
 }
+function* fetchAlbumsSaga() {
+    const response = yield call(axios.get, 'https://jsonplaceholder.typicode.com/albums');
+    yield put(setAlbums(response.data));
+}
+function* fetchPhotosSaga() {
+    const response = yield call(axios.get, 'https://jsonplaceholder.typicode.com/photos');
+    yield put(setPhotos(response.data));
+}
+
 export function* watcherSaga() {
     yield takeEvery('FETCH_DATA', workerSaga);
     yield takeEvery('FETCH_COMMENTS', fetchCommentsSaga);
     yield takeEvery('FETCH_USERS', fetchUsersSaga);
+    yield takeEvery('FETCH_ALBUMS', fetchAlbumsSaga);
+    yield takeEvery('FETCH_PHOTOS', fetchPhotosSaga);
 }
 

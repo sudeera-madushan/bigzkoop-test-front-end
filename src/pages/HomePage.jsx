@@ -36,20 +36,19 @@ const HomePage = () => {
         window.scrollTo(0, 0);
     };
     return (
-        <div className={"bg-[rgba(31,41,55,1)]"}>
+        <div className={"bg-[rgba(31,41,55,1)] min-h-[100vh]"}>
             <button onClick={show}>show</button>
             <div className={"grid lg:grid-cols-5 gap-4 p-9 md:grid-cols-4 sm:grid-cols-2"}>
                 {posts.map((post) => (
                     <Card
                      handleEvent={() => handleCardClick(post.id, post, users, navigate)}
-                     key={post.id} title={post.title} body={post.body} author = {users.find(user => user.id === post.userId)?.name}/>
+                     key={post.id}
+                     title={post.title}
+                     body={post.body}
+                     author = {users.find(user => user.id === post.userId)?.name}
+                     showAuthor={true}
+                    />
                 ))}
-                {/*{comments.map((comment) => (*/}
-                {/*    <div key={comment.id}>*/}
-                {/*        <h2>{comment.name}</h2>*/}
-                {/*        <p>{comment.body}</p>*/}
-                {/*    </div>*/}
-                {/*))}*/}
             </div>
         </div>
     );

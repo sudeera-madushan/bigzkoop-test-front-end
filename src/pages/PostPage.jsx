@@ -3,15 +3,19 @@
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import Comment from "../component/card/Comment";
 const PostPage = () => {
-
+    const navigate = useNavigate();
     const location = useLocation();
     const post = location?.state?.post;
     const user = location?.state?.user;
     const comments = useSelector((state) => state.comments).filter(com => com.postId === post.id);
+    const handleAuthorClick = () => {
+        navigate('/author' , {state: {user:user}});
+        window.scrollTo(0, 0);
+    };
   return(
       <section className="p-[10vw] bg-[rgba(31,41,55,1)] pt-10">
           <div className={"bg-[rgba(239,246,255,0.1)] rounded-2xl p-10 "}>
@@ -19,7 +23,9 @@ const PostPage = () => {
           <h1 className={"text-2xl text-pink-600 font-bold "}>{post.title.charAt(0).toUpperCase() + post.title.slice(1)}</h1>
         </div>
         <div className={""}>
-          <h1 className={"text-gray-400"}><span className={"text-gray-300"}>Author: </span>{user.name}</h1>
+          <h1 className={"text-gray-400"}><span className={"text-gray-300"}>Author: </span>
+              <span onClick={handleAuthorClick} className={"hover:text-blue-700 cursor-pointer duration-300"}>{user.name}</span>
+          </h1>
         </div>
         <div className={"border my-5 border-gray-500"}></div>
         <div className={""}>
