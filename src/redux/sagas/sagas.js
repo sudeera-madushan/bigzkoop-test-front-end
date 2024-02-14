@@ -9,16 +9,14 @@ import { setData } from '../slice/dataSlice.js';
 import {setComments} from "../slice/commentsSlice.js";
 import { setUsers } from '../slice/usersSlice.js';
 import { setAlbums } from '../slice/albumSlice.js';
-import { setPhotos } from '../slice/photosSlice.jsx';
+import { setPhotos } from '../slice/photosSlice.js';
 
 function* workerSaga() {
-    console.log("Get Posts")
     const response = yield call(axios.get, 'https://jsonplaceholder.typicode.com/posts');
     yield put(setData(response.data)); // Only store the data in the state
 }
 
 function* fetchCommentsSaga() {
-    console.log("Get Comments")
     const response = yield call(axios.get, 'https://jsonplaceholder.typicode.com/comments');
     yield put(setComments(response.data)); // Only store the data in the state
 }

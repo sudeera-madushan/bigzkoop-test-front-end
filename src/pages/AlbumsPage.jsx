@@ -15,19 +15,19 @@ const AlbumsPage = () => {
     const photos = useSelector((state) => state.photos);
     const navigate = useNavigate()
 
+    //
+    // useEffect(() => {
+    //
+    //     dispatch({ type: 'FETCH_ALBUMS' });
+    //     dispatch({ type: 'FETCH_USERS' });
+    //     dispatch({ type: 'FETCH_PHOTOS' });
+    // }, [dispatch]);
 
-    useEffect(() => {
-
-        dispatch({ type: 'FETCH_ALBUMS' });
-        dispatch({ type: 'FETCH_USERS' });
-        dispatch({ type: 'FETCH_PHOTOS' });
-    }, [dispatch]);
-
-    const handleCardClick = (post) => {
+    const handleCardClick = (album) => {
         navigate('/album', {
             state: {
-                post: post,
-                user: users.find(user => user.id === post.userId)
+                album: album,
+                user: users.find(user => user.id === album.userId)
             }
         });
         window.scrollTo(0, 0);

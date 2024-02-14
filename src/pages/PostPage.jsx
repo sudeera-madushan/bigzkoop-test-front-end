@@ -17,7 +17,7 @@ const PostPage = () => {
         window.scrollTo(0, 0);
     };
   return(
-      <section className="p-[10vw] bg-[rgba(31,41,55,1)] pt-10">
+      <section className="p-[10vw] bg-[rgba(31,41,55,1)] pt-10 min-h-[100vh]">
           <div className={"bg-[rgba(239,246,255,0.1)] rounded-2xl p-10 "}>
         <div className=" pb-3">
           <h1 className={"text-2xl text-pink-600 font-bold "}>{post.title.charAt(0).toUpperCase() + post.title.slice(1)}</h1>

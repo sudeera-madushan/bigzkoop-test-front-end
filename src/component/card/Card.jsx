@@ -22,9 +22,9 @@ const Card = (prop) => {
             </div>
 
         { prop.showAuthor ? <div>
-            <div className={"w-11/12 rounded border-gray-300 border m-2 mt-3"}/>
+            <div className={"w-11/12 rounded border-gray-400 border m-2 mt-3"}/>
             <div>
-                <p className={"p-2 pt-0 text-gray-200 font-sans text-sm"}>Author: {prop.author}</p>
+                <p className={"p-2 pt-0 text-gray-200 font-sans text-sm"}>Author: <span className={"text-gray-400"}>{prop.author}</span></p>
             </div>
         </div> : <div className={"mb-1"}></div>
         }

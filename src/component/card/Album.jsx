@@ -19,7 +19,7 @@ const Album = (prop) => {
               <div className={"px-2 grid-cols-3 grid gap-1"}>
                   {
                       prop.photos.map((photo) => (
-                          <img key={photo.id} className={"rounded w-20"} src={photo.thumbnailUrl} alt=""/>
+                          <img key={photo.id} className={"rounded "} src={photo.thumbnailUrl} alt=""/>
                       ))
                   }
               </div>

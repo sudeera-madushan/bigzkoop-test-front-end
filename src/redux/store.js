@@ -10,7 +10,7 @@ import { dataSlice } from './slice/dataSlice.js';
 import { commentsSlice } from './slice/commentsSlice.js';
 import {usersSlice} from "./slice/usersSlice.js";
 import {albumsSclice} from "./slice/albumSlice.js";
-import {photosSlice} from "./slice/photosSlice.jsx";
+import {photosSlice} from "./slice/photosSlice.js";
 
 const sagaMiddleware = createSagaMiddleware();
 

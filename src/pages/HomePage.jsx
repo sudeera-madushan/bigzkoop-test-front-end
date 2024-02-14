@@ -9,23 +9,11 @@ import {useNavigate} from "react-router-dom";
  * project : bigzkoop-test-front-end
  */
 const HomePage = () => {
-    const dispatch = useDispatch();
     const posts = useSelector((state) => state.data);
     const users = useSelector((state) => state.users);
     const navigate = useNavigate()
 
 
-    useEffect(() => {
-
-        dispatch({ type: 'FETCH_DATA' });
-        dispatch({ type: 'FETCH_COMMENTS' });
-        dispatch({ type: 'FETCH_USERS' });
-    }, [dispatch]);
-
-    const show = () => {
-        console.log(posts[0]);
-        // console.log(comments);
-    }
     const handleCardClick = (postId, post, users, navigate) => {
         navigate('/post', {
             state: {
@@ -37,8 +25,11 @@ const HomePage = () => {
     };
     return (
         <div className={"bg-[rgba(31,41,55,1)] min-h-[100vh]"}>
-            <button onClick={show}>show</button>
-            <div className={"grid lg:grid-cols-5 gap-4 p-9 md:grid-cols-4 sm:grid-cols-2"}>
+            <div>
+                <h1 className={"text-gray-200 font-bold text-3xl p-9 pb-0"}>LIST OF ARTICLES</h1>
+            </div>
+            <div className={"grid lg:grid-cols-5 gap-4 p-9 md:grid-cols-4 sm:grid-cols-2 pt-3"}>
+
                 {posts.map((post) => (
                     <Card
                      handleEvent={() => handleCardClick(post.id, post, users, navigate)}
