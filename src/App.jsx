@@ -9,17 +9,23 @@ import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import Header from "./component/layout/Header.jsx";
 
+/**
+ * author : Sudeera Madushan
+ * date : 2/13/2024
+ * project : bigzkoop-test-front-end
+ */
+
 function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
         dispatch({ type: 'FETCH_ALBUMS' });
         dispatch({ type: 'FETCH_USERS' });
         dispatch({ type: 'FETCH_PHOTOS' });
         dispatch({ type: 'FETCH_DATA' });
         dispatch({ type: 'FETCH_COMMENTS' });
     }, [dispatch]);
+
     return(
         <BrowserRouter>
             <Header/>

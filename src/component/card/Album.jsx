@@ -3,6 +3,7 @@
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const Album = (prop) => {
   return(
       <div

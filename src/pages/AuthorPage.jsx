@@ -1,7 +1,7 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import Card from "../component/card/Card.jsx";
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+import {useState} from "react";
 import Album from "../component/card/Album.jsx";
 
 /**
@@ -9,9 +9,9 @@ import Album from "../component/card/Album.jsx";
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const AuthorPage = () => {
     const location = useLocation();
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = location?.state?.user;
     const posts = useSelector((state) => state.data).filter(post => post.userId === user.id);
@@ -19,12 +19,6 @@ const AuthorPage = () => {
     const photos = useSelector((state) => state.photos);
     const [isPost, setIsPost] = useState(true);
 
-    // useEffect(() => {
-    //
-    //     dispatch({ type: 'FETCH_DATA' });
-    //     dispatch({ type: 'FETCH_ALBUMS' });
-    //     dispatch({ type: 'FETCH_PHOTOS' });
-    // }, [dispatch]);
     const handleCardClick = (postId, post) => {
         navigate('/post', {
             state: {

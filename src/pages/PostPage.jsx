@@ -1,11 +1,13 @@
+import {useLocation, useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
+import Comment from "../component/card/Comment";
+
 /**
  * author : Sudeera Madushan
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
-import {useLocation, useNavigate} from "react-router-dom";
-import {useSelector} from "react-redux";
-import Comment from "../component/card/Comment";
+
 const PostPage = () => {
     const navigate = useNavigate();
     const location = useLocation();

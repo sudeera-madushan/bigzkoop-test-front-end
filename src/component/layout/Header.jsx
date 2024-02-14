@@ -6,12 +6,13 @@ import {useState} from "react";
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const Header = () => {
     const navigate = useNavigate();
     const [isArticles , setIsArticles] = useState(true)
   return(
       <nav className={"bg-[rgba(31,41,55,1)] p-2"}>
-          <div className={"flex bg-[rgba(239,246,255,0.2)] p-2 rounded-xl justify-between shadow"}>
+          <div className={"flex bg-[rgba(239,246,255,0.2)] p-2 rounded-xl justify-between shadow max-[800px]:block"}>
               <div className={"flex ms-2"}>
                   <img
                       className={"w-12"}
@@ -19,7 +20,7 @@ const Header = () => {
                       alt="jsonPlaceholder"/>
                   <h1 className={"text-emerald-500 font-bold text-4xl p-1"}>JSONPLACEHOLDER</h1>
               </div>
-              <div className={"flex gap-5"}>
+              <div className={"flex gap-5 max-[800px]:justify-around"}>
                   <div
                       onClick={() => {
                           navigate("/home");

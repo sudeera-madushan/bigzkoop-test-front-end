@@ -1,5 +1,4 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {useSelector} from "react-redux";
 import Card from "../component/card/Card.jsx";
 import {useNavigate} from "react-router-dom";
 
@@ -8,6 +7,7 @@ import {useNavigate} from "react-router-dom";
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const HomePage = () => {
     const posts = useSelector((state) => state.data);
     const users = useSelector((state) => state.users);
@@ -28,7 +28,7 @@ const HomePage = () => {
             <div>
                 <h1 className={"text-gray-200 font-bold text-3xl p-9 pb-0"}>LIST OF ARTICLES</h1>
             </div>
-            <div className={"grid lg:grid-cols-5 gap-4 p-9 md:grid-cols-4 sm:grid-cols-2 pt-3"}>
+            <div className={"grid xl:grid-cols-5 lg:grid-cols-4 gap-4 p-9 md:grid-cols-3 sm:grid-cols-2 pt-3"}>
 
                 {posts.map((post) => (
                     <Card

@@ -3,6 +3,7 @@
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const Comment = (prop) => {
   return (
       <div key={prop.id} className={"p-5 bg-[rgba(239,246,255,0.2)] mb-2 rounded-lg"}>

@@ -1,6 +1,5 @@
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {useEffect} from "react";
 import Album from "../component/card/Album.jsx";
 
 /**
@@ -8,20 +7,13 @@ import Album from "../component/card/Album.jsx";
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const AlbumsPage = () => {
-    const dispatch = useDispatch();
     const albums = useSelector((state) => state.albums);
     const users = useSelector((state) => state.users);
     const photos = useSelector((state) => state.photos);
     const navigate = useNavigate()
 
-    //
-    // useEffect(() => {
-    //
-    //     dispatch({ type: 'FETCH_ALBUMS' });
-    //     dispatch({ type: 'FETCH_USERS' });
-    //     dispatch({ type: 'FETCH_PHOTOS' });
-    // }, [dispatch]);
 
     const handleCardClick = (album) => {
         navigate('/album', {
@@ -34,7 +26,10 @@ const AlbumsPage = () => {
     };
     return (
         <div className={"bg-[rgba(31,41,55,1)] min-h-[100vh]"}>
-            <div className={"grid lg:grid-cols-4 gap-4 p-9 md:grid-cols-4 sm:grid-cols-2"}>
+            <div>
+                <h1 className={"text-gray-200 font-bold text-3xl p-9 pb-0"}>LIST OF ARTICLES</h1>
+            </div>
+            <div className={"grid lg:grid-cols-4 gap-4 p-9 pt-3 md:grid-cols-4 sm:grid-cols-2"}>
                 {albums.map((a) => (
                     <Album
                         key={a.id}

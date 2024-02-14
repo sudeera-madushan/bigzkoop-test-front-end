@@ -1,12 +1,12 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
-import Comment from "../component/card/Comment.jsx";
 
 /**
  * author : Sudeera Madushan
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const AlbumPage = () => {
     const navigate = useNavigate();
     const location = useLocation();

@@ -5,6 +5,7 @@ import {useLocation, useNavigate} from "react-router-dom";
  * date : 2/14/2024
  * project : bigzkoop-test-front-end
  */
+
 const PhotoPage = () => {
 
     const navigate = useNavigate();
