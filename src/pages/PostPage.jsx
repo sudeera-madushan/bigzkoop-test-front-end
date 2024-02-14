@@ -4,19 +4,41 @@
  * project : bigzkoop-test-front-end
  */
 import {useLocation} from "react-router-dom";
+import {useSelector} from "react-redux";
+import Comment from "../component/card/Comment";
 const PostPage = () => {
-  
-  const location = useLocation();
-  const post = location?.state?.post;
+
+    const location = useLocation();
+    const post = location?.state?.post;
+    const user = location?.state?.user;
+    const comments = useSelector((state) => state.comments).filter(com => com.postId === post.id);
   return(
-      <section>
-        <div>
-          <h1>{post.title}</h1>
+      <section className="p-[10vw] bg-[rgba(31,41,55,1)] pt-10">
+          <div className={"bg-[rgba(239,246,255,0.1)] rounded-2xl p-10 "}>
+        <div className=" pb-3">
+          <h1 className={"text-2xl text-pink-600 font-bold "}>{post.title.charAt(0).toUpperCase() + post.title.slice(1)}</h1>
         </div>
-        <div>
-          <p>{post.body}</p>
+        <div className={""}>
+          <h1 className={"text-gray-400"}><span className={"text-gray-300"}>Author: </span>{user.name}</h1>
         </div>
-        <button onClick={() => console.log(post)}>lo</button>
+        <div className={"border my-5 border-gray-500"}></div>
+        <div className={""}>
+          <p className={"text-gray-200"}>{post.body.charAt(0).toUpperCase() + post.body.slice(1)}</p>
+        </div>
+              <div className={"mt-5"}>
+                  <h1 className={"text-2xl font-bold text-cyan-600"}>Comments</h1>
+              </div>
+          <div className={"grid p-5"}>
+              <div>{comments.map((comment) =>(
+                <Comment
+                    key={comment.id}
+                    email={comment.email}
+                    body={comment.body}
+                />
+              ))}</div>
+          </div>
+        {/*<button onClick={() => console.log(comments)}>lo</button>*/}
+          </div>
       </section>
   )
 }
