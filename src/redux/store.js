@@ -6,8 +6,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import { watcherSaga } from './sagas/sagas.js';
-import { dataSlice } from './slice/dataSlice.js';
-import { commentsSlice } from './slice/commentsSlice.js';
+import {dataSlice } from './slice/dataSlice.js';
+import {commentsSlice } from './slice/commentsSlice.js';
 import {usersSlice} from "./slice/usersSlice.js";
 import {albumsSclice} from "./slice/albumSlice.js";
 import {photosSlice} from "./slice/photosSlice.js";

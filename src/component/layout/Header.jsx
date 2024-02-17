@@ -18,7 +18,7 @@ const Header = () => {
                       className={"w-12"}
                       src="https://user-images.githubusercontent.com/53334880/119559594-20fcc280-bdb8-11eb-8244-b721cc0c55a9.png"
                       alt="jsonPlaceholder"/>
-                  <h1 className={"text-emerald-500 font-bold text-4xl p-1"}>JSONPLACEHOLDER</h1>
+                  <h1 className={"text-emerald-500 font-bold text-4xl p-1 max-[450px]:text-3xl"}>JSONPLACEHOLDER</h1>
               </div>
               <div className={"flex gap-5 max-[800px]:justify-around"}>
                   <div

@@ -23,6 +23,7 @@ const HomePage = () => {
         });
         window.scrollTo(0, 0);
     };
+
     return (
         <div className={"bg-[rgba(31,41,55,1)] min-h-[100vh]"}>
             <div>

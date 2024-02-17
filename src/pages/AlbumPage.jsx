@@ -13,6 +13,7 @@ const AlbumPage = () => {
     const album = location?.state?.album;
     const user = location?.state?.user;
     const photos = useSelector((state) => state.photos).filter(p => p.albumId === album.id);
+
     const handleAuthorClick = () => {
         navigate('/author' , {state: {user:user}});
         window.scrollTo(0, 0);

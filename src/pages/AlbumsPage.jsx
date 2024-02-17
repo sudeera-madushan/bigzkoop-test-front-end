@@ -27,7 +27,7 @@ const AlbumsPage = () => {
     return (
         <div className={"bg-[rgba(31,41,55,1)] min-h-[100vh]"}>
             <div>
-                <h1 className={"text-gray-200 font-bold text-3xl p-9 pb-0"}>LIST OF ARTICLES</h1>
+                <h1 className={"text-gray-200 font-bold text-3xl p-9 pb-0"}>LIST OF ALBUMS</h1>
             </div>
             <div className={"grid lg:grid-cols-4 gap-4 p-9 pt-3 md:grid-cols-4 sm:grid-cols-2"}>
                 {albums.map((a) => (
